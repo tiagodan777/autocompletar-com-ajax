@@ -1,0 +1,23 @@
+{
+  "name": "livro-javascript-and-jquery",
+  "version": "1.0.0",
+  "description": "A minha leitura e prática com o livro JavaScript e jQuery do Jon Duckett para apredner js e jQuery definitivamente",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tiagodan777/Livro-JavaScript-and-jQuery.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/tiagodan777/Livro-JavaScript-and-jQuery/issues"
+  },
+  "homepage": "https://github.com/tiagodan777/Livro-JavaScript-and-jQuery#readme",
+  "devDependencies": {
+    "@types/jquery": "^4.0.0"
+  }
+}
