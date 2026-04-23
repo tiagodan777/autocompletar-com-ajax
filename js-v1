@@ -1,8 +1,8 @@
 $(function() {
     var $search = $('#search');
     var $recomendationsBox = $('#recomendationsBox');
-    var $list = $('#list');
-
+    var $recomendations = $('#list');
+    
     $recomendationsBox.hide();
 
     $search.on('focus', function() {
@@ -13,18 +13,19 @@ $(function() {
         $recomendationsBox.fadeOut(100);
     });
 
-    $search.on('keyup', function() {
-        var queryString = $search.val();
+    $search.on('keyup', function(e) {
+        var queryString = $search.val().trim();
+
         var timeout = setTimeout(function() {
             $.get('index.php', {search: queryString}, function(data) {
                 if (queryString.length > 0) {
-                    $list.empty();
-                    var dados = JSON.parse(data);
-                    for (var c = 0; c < dados.length; c++) {
-                        $list.append('<li><strong>' + dados[c].texto + '</strong></li>');
+                    $recomendations.empty();
+                    var autocompelta = JSON.parse(data)
+                    for (var c = 0; c < autocompelta.length; c++) {
+                        $recomendations.append('<li><a href="https://www.google.com">' + autocompelta[c].texto + '</a></li>');
                     }
                 } else {
-                    $list.html('');
+                    $recomendations.text('');
                 }
             });
         }, 250);
